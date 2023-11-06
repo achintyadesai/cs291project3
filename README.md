@@ -1,4 +1,6 @@
 # README
+Unfortunately, due to time limit on demo, I could not cover everything but here is the presentation text which covers all the app functionalities and can be tested using this repo.
+
 Demo Transcript:
 
 Welcome to CS 291 Project 3 Demo video
