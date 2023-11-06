@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts Feed</h1>
+
+<div id="posts">
+  <% @posts.each do |post| %>
+    <%= render post %>
+    <p>
+      <%= link_to "Show this post", post %>
+    </p>
+    <hr>
+  <% end %>
+</div>
+<%= link_to "List of users", users_path %>|
+<%= link_to "List of comments", comments_path %>|
+<%= link_to "New post", new_post_path %>|
+<%= link_to "New user", new_user_path %>|
+<%= link_to "New comment", new_comment_path %>

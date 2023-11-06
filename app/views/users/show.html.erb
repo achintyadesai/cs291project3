@@ -1,0 +1,27 @@
+<h1><%= @user.name %></h1>
+Email of this user: <%= @user.email %><br>
+Posts by this user:<br>
+<ul>
+  <% @user.posts.each do |post| %>
+    <li>
+      <strong><%= post.title %></strong> <br>
+      <%= post.content %> <br>
+      <ul>
+        <% post.comments.each do |comment| %>
+          <li><%= comment.content %> by <%= comment.user.name %></li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+Comments by this user:<br>
+<ul>
+  <% @user.comments.each do |comment| %>
+    <li><%= comment.content %></li>
+  <% end %>
+</ul>
+<%= link_to "Edit this user", edit_user_path(@user) %> |
+<%= link_to "Back to users", users_path %> |
+<%= link_to "Home", posts_path %>
+
+<%= button_to "Destroy this user", @user, method: :delete %>

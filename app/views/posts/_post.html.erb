@@ -1,0 +1,37 @@
+<div id="<%= dom_id post %>">
+  <p>
+    <strong>Post ID:</strong>
+    <%= post.id %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= post.user.name %>
+  </p>
+
+  <p>
+    <strong>User ID:</strong>
+    <%= post.user_id %>
+  </p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= post.title %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= post.content %>
+  </p>
+
+  <p>
+    <strong>Comments on this post:</strong>
+    <ul>
+      <% post.comments.each do |comment| %>
+        <li><%= comment.content %> -- <strong><%= comment.user.name %></strong></li>
+      <% end %>
+    </ul>
+  </p>
+
+</div>
+

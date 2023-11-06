@@ -1,0 +1,31 @@
+<h1>List of Users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <strong><%= user.name %></strong> with ID <strong><%= user.id %></strong>
+      <ul>
+        <% user.posts.each do |post| %>
+          <li>
+            <strong>Post ID: </strong> <%= post.id %> <br>
+            <strong>Title: </strong> <%= post.title %> <br>
+            <strong>Content: </strong><%= post.content %> <br>
+            <strong>Comments: </strong>
+            <ul>
+              <% post.comments.each do |comment| %>
+                <li><%= comment.content %> -- <strong><%= comment.user.name %></strong></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+    <%= link_to "Show this user", user %>
+    <hr>
+  <% end %>
+</ul>
+
+<%= link_to "New post", new_post_path %>|
+<%= link_to "New user", new_user_path %>|
+<%= link_to "New comment", new_comment_path %>|
+<%= link_to "Home", posts_path %>
